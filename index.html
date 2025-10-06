@@ -30,11 +30,14 @@
           #331e50
         ); /* Dark purple gradient */
         color: var(--text-color);
+        /* IMPORTANT FOR MOBILE: Allows content to stretch beyond viewport height */
         min-height: 100vh;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* Hide overflow from confetti and balloons */
+        flex-direction: column; /* Ensure main container stacks */
+        justify-content: flex-start; /* Start content from the top */
+        align-items: center; /* Still center horizontally */
+        /* Add padding for scrollable mobile spacing, REMOVED overflow: hidden */
+        padding: 2rem 1rem;
       }
 
       .card {
