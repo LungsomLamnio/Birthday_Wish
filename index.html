@@ -60,14 +60,16 @@
       @keyframes glow {
         0%,
         100% {
-          text-shadow: 0 0 5px var(--primary-color),
-            0 0 10px var(--primary-color), 0 0 15px var(--secondary-color);
+          /* Reduced shadow size for better containment within the card */
+          text-shadow: 0 0 3px var(--primary-color),
+            0 0 6px var(--primary-color), 0 0 9px var(--secondary-color);
           transform: scale(1);
         }
         50% {
-          text-shadow: 0 0 10px var(--primary-color),
-            0 0 20px var(--primary-color), 0 0 30px var(--secondary-color),
-            0 0 40px var(--secondary-color);
+          /* Reduced maximum spread from 40px to 20px */
+          text-shadow: 0 0 8px var(--primary-color),
+            0 0 12px var(--primary-color), 0 0 16px var(--secondary-color),
+            0 0 20px var(--secondary-color);
           transform: scale(1.05);
         }
       }
