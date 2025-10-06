@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- CRITICAL FOR MOBILE: Ensures content scales correctly on all phone screens, including Samsung Galaxy -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday Sheela Michi!</title>
     <!-- Load Tailwind CSS for styling -->
@@ -30,13 +31,14 @@
           #331e50
         ); /* Dark purple gradient */
         color: var(--text-color);
-        /* IMPORTANT FOR MOBILE: Allows content to stretch beyond viewport height */
         min-height: 100vh;
         display: flex;
-        flex-direction: column; /* Ensure main container stacks */
-        justify-content: flex-start; /* Start content from the top */
-        align-items: center; /* Still center horizontally */
-        /* Add padding for scrollable mobile spacing, REMOVED overflow: hidden */
+        flex-direction: column;
+        /* ALIGNMENT FOR MOBILE: Centers the card vertically when the content is short, 
+               but still allows scrolling if content pushes past 100vh. */
+        justify-content: center;
+        align-items: center;
+        /* Added vertical padding (p-y) and horizontal padding (p-x) to ensure space on small screens */
         padding: 2rem 1rem;
       }
 
@@ -48,6 +50,9 @@
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         /* Added transition for interactive movement */
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        /* Ensures the card itself doesn't stretch too wide on larger screens */
+        max-width: 440px;
+        width: 100%;
       }
 
       /* Subtle hover effect for the card */
